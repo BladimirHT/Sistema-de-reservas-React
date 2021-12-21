@@ -9,9 +9,10 @@ export const MainMenu = () =>{
                 <a href="/MisReservas"> Mis reservas </a>
             </li>
             <li>
-                <a href="/SignUp"> Sign Up </a>
+                <a href="/Login"> Sign Up </a>
             </li>
         </ul>
     </nav>
 };
 
+export default MainMenu;

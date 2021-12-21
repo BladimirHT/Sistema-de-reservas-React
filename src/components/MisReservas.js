@@ -8,9 +8,17 @@ const MisReservas = () => {
 
   return (
     <div>
-      <Home addOrEditReserva={addOrEditReserva} />
-      <h1>Hola mundo</h1>
-    </div>
+          <table className="task-list">
+            <thead className="list-head">
+              <tr className="list-row">
+                <th className="list-head-item">Nombre</th>
+                <th className="list-head-item">Cantidad de personas</th>
+                <th className="list-head-item">Fecha</th>
+              </tr>
+            </thead>
+            <tbody id="list-body">
+            </tbody>
+          </table>    </div>
   );
 };
 

@@ -1,87 +1,14 @@
 import React, { useState } from "react";
-import restaurante_1 from "../img/restautante_1.jpg";
 import restaurante_2 from "../img/restautante_2.jpg";
 
-//import { Box, Flex, Badge, Icon, Image } from "@chakra-ui/react";
-
-// Sample card from Airbnb
-/*
 export const Home = () => {
-  const property = {
-    imageUrl: "https://bit.ly/2Z4KKcF",
-    imageAlt: "Rear view of modern home with pool",
-    beds: 3,
-    baths: 2,
-    title: "Modern home in city center in the heart of historic Los Angeles",
-    formattedPrice: "$1,900.00",
-    reviewCount: 34,
-    rating: 4,
-  };                                      
-
-  return (
-    <Box  maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Image src={property.imageUrl} alt={property.imageAlt} />
-
-      <Box p="6">
-        <Box display="flex" alignItems="baseline">
-          <Badge borderRadius="full" px="2" colorScheme="teal">
-            New
-          </Badge>
-          <Box
-            color="gray.500"
-            fontWeight="semibold"
-            letterSpacing="wide"
-            fontSize="xs"
-            textTransform="uppercase"
-            ml="2"
-          >
-            {property.beds} beds &bull; {property.baths} baths
-          </Box>
-        </Box>
-
-        <Box
-          mt="1"
-          fontWeight="semibold"
-          as="h4"
-          lineHeight="tight"
-          isTruncated
-        >
-          {property.title}
-        </Box>
-
-        <Box>
-          {property.formattedPrice}
-          <Box as="span" color="gray.600" fontSize="sm">
-            / wk
-          </Box>
-        </Box>
-
-        <Box display="flex" mt="2" alignItems="center">
-          {Array(5)
-            .fill("")
-            .map((_, i) => (
-              <Icon
-              displayName="CalendarIcon"
-                key={i}
-                color={i < property.rating ? "teal.500" : "gray.300"}
-              />
-            ))}
-          <Box as="span" ml="2" color="gray.600" fontSize="sm">
-            {property.reviewCount} reviews
-          </Box>
-        </Box>
-      </Box>
-    </Box>
-  );
-};
-*/
-
-export const Home = (props) => {
   const initialStateValues = {
     name: "",
     numberPeople: "",
     dateTimeEntry: "",
   };
+
+  const loggedIn = []; 
 
   const [values, setValues] = useState(initialStateValues);
 
@@ -93,8 +20,7 @@ export const Home = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(values);
-    props.addOrEditReserva(values);
-    //setValues({...initialStateValues})
+    setValues({...initialStateValues})
   };
 
   return (
@@ -109,7 +35,7 @@ export const Home = (props) => {
         />
         <div className="container-restaurant-right">
           <form onSubmit={handleSubmit}>
-            <label for="nombre" className="formulario">
+            <label htmlFor ="nombre" className="formulario">
               <span id="titleRestaurant">Gabriel</span>
               <hr width="50%"></hr>
               <span>¿Nombre de la persona para la reservación? </span>
@@ -125,7 +51,7 @@ export const Home = (props) => {
               ></input>
               <hr />
             </label>
-            <label for="people" className="formulario">
+            <label htmlFor ="people" className="formulario">
               <span>Cantidad de personas</span>
               <hr />
               <input
@@ -148,7 +74,7 @@ export const Home = (props) => {
               </datalist>
             </label>
             <hr />
-            <label for="dateTimeEntrada" className="formulario">
+            <label htmlFor ="dateTimeEntrada" className="formulario">
               <input
                 type="datetime-local"
                 name="dateTimeEntry"
@@ -158,7 +84,7 @@ export const Home = (props) => {
               ></input>{" "}
             </label>
             <hr />
-            <button className="reserva" type="submit">
+            <button className="reserva" type="submit" >
               Reservar
             </button>
           </form>
@@ -167,3 +93,5 @@ export const Home = (props) => {
     </>
   );
 };
+
+export default Home;
